@@ -75,7 +75,7 @@ panelKEY = ReplyKeyboardMarkup(
         [
             ["📊 Status Bot","🗂 Recursos"],
             ["👥 Enviar a todos","👥 Reenviar a todos"],
-            ["◀️Atrás"],
+            ["◀️back"],
         ],
         resize_keyboard=True
     )
@@ -98,7 +98,7 @@ home = ReplyKeyboardMarkup(
 
 back = ReplyKeyboardMarkup(
         [
-            ["◀️Atrás"],
+            ["◀️back"],
         ],
         resize_keyboard=True
     )
@@ -107,7 +107,7 @@ configKEY = ReplyKeyboardMarkup(
         [
             ["📡 NORMAL","📡 BASE64"],
             ["📡 CLASH","📡 CLASH.Meta"],
-            ["◀️Atrás"]
+            ["◀️back"]
         ],
         resize_keyboard=True
     )
@@ -117,7 +117,7 @@ configsKEY = ReplyKeyboardMarkup(
             ["🔗 VMESS","🔗 VLESS"],
             ["🔗 REALITY","🔗 TROJAN"],
             ["🔗 ShadowSocks"],
-            ["◀️Atrás"]
+            ["◀️back"]
         ],
         resize_keyboard=True
     )
@@ -181,7 +181,7 @@ async def Main(client, message):
     if from_id not in USERS["users"]:
         USERS["users"].append(from_id)
         users("add",from_id)
-    if text in ['/start','◀️Atrás']:
+    if text in ['/start','◀️back']:
         Step[from_id] = "None"
         await bot.send_message(from_id,"**🤖 Bienvenido a V2ray Config Bot🤖\n\n🔰 Elige la opción que quieras :**",reply_markup=home,reply_to_message_id=message_id)
         return False
@@ -207,7 +207,7 @@ async def Main(client, message):
         msg = await bot.send_message(from_id,"**⚡️ Bot de V2ray Gratis\n💯 Los mejores servicios de V2ray\n🚀 Máxima velocidad y sin interrupciones\n👤 Sin límite de número de usuarios.\n📱 Se puede conectar en Android, iOS, Windows, MacOS y Linux\n🧪 Cuenta completamente gratuita\n\nPara iniciar el Bot👇🏻**",reply_markup=link)    
         await msg.reply_text("**⭐️ Envíe el mensaje anterior a sus amigos para actualizar su cuenta.**",True,reply_markup=back)
         return False
-    elif text == "👤 Account":
+    elif text == "👤 Cuenta":
         Step[from_id] = "account"
         if from_id in PRO:tp = "Pro"
         else:tp = "Free"
