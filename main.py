@@ -181,7 +181,7 @@ async def Main(client, message):
     if from_id not in USERS["users"]:
         USERS["users"].append(from_id)
         users("add",from_id)
-    if text in ['/start','◀️back']:
+    if text in ['/start','◀️Atrás']:
         Step[from_id] = "None"
         await bot.send_message(from_id,"**🤖 Bienvenido a V2ray Config Bot🤖\n\n🔰 Elige la opción que quieras :**",reply_markup=home,reply_to_message_id=message_id)
         return False
@@ -207,7 +207,7 @@ async def Main(client, message):
         msg = await bot.send_message(from_id,"**⚡️ Bot de V2ray Gratis\n💯 Los mejores servicios de V2ray\n🚀 Máxima velocidad y sin interrupciones\n👤 Sin límite de número de usuarios.\n📱 Se puede conectar en Android, iOS, Windows, MacOS y Linux\n🧪 Cuenta completamente gratuita\n\nPara iniciar el Bot👇🏻**",reply_markup=link)    
         await msg.reply_text("**⭐️ Envíe el mensaje anterior a sus amigos para actualizar su cuenta.**",True,reply_markup=back)
         return False
-    elif text == "👤 Información de cuenta":
+    elif text == "👤 Account":
         Step[from_id] = "account"
         if from_id in PRO:tp = "Pro"
         else:tp = "Free"
@@ -261,7 +261,7 @@ async def Main(client, message):
         return False
     elif text == "🗂 Recursos" and from_id in admins:
         Step[from_id] = "github"
-        await bot.send_message(from_id,"**GitHub link : github.com/luan-03/V2ray-Bot\n\n😉 No olvides darle me gusta❤️!**",reply_markup=backP,reply_to_message_id=message_id,disable_web_page_preview=True)
+        await bot.send_message(from_id,"**GitHub link : github.com/luan-03/V2ray-config-bot\n\n😉 No olvides darle me gusta❤️!**",reply_markup=backP,reply_to_message_id=message_id,disable_web_page_preview=True)
         return False
     elif text == "👥 Send ALL" and from_id in admins:
         Step[from_id] = "SendALL"
