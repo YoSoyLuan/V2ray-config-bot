@@ -263,11 +263,11 @@ async def Main(client, message):
         Step[from_id] = "github"
         await bot.send_message(from_id,"**GitHub link : github.com/luan-03/V2ray-config-bot\n\n😉 No olvides darle me gusta❤️!**",reply_markup=backP,reply_to_message_id=message_id,disable_web_page_preview=True)
         return False
-    elif text == "👥 Send ALL" and from_id in admins:
+    elif text == "👥 Enviar a todos" and from_id in admins:
         Step[from_id] = "SendALL"
         await bot.send_message(from_id,"**✅ Envía tu mensaje :**",reply_markup=backP,reply_to_message_id=message_id)
         return False
-    elif text == "👥 Forward ALL" and from_id in admins:
+    elif text == "👥 Reenviar a todos" and from_id in admins:
         Step[from_id] = "ForwardALL"
         await bot.send_message(from_id,"**✅ Reenvie su mensaje :**",reply_markup=backP,reply_to_message_id=message_id)
         return False
