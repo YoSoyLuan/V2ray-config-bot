@@ -213,7 +213,7 @@ async def Main(client, message):
         else:tp = "Free"
         await bot.send_message(from_id,"**🆔 User ID :** `{}`\n**👤 Tipo de cuenta :** `{}`\n**📅 Fecha :** `{}`\n\n**🤖 @{}**".format(from_id,tp,telegram_date,BOTD.username),reply_markup=back,reply_to_message_id=message_id)
         return False
-    elif text == "📣 Patrocinador":
+    elif text == "📣 Owners":
         Step[from_id] = "spons"
         Tex = "💜 Canal :\n\n"
         for i in channels:
